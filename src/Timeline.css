@@ -1,0 +1,90 @@
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    margin: 20px;
+}
+
+/* Each row is flex */
+.schedule-row {
+    display: flex;
+}
+
+/* The left‐hand “name” column */
+.name-cell {
+    min-width: 100px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+/* Header styling */
+.header-cell {
+    background: #f0f0f0;
+    font-weight: bold;
+    color: black;
+}
+
+/* Time cells (hour slots) */
+.time-cell {
+    flex: 1;
+    min-width: 60px;
+    height: 60px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 4px;
+}
+
+/* Wrap all the time‐cells so we can absolutely position event blocks */
+.time-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+/* The black event block */
+/* src/Timeline.css */
+.event-block {
+    position: absolute;
+    top:      0;
+    height:   100%;
+
+    background: black;
+    color:      white;
+    font-size:  0.8rem;
+
+    display:       flex;
+    align-items:   center;
+    justify-content: center;
+    padding:       0 4px;
+    box-sizing:    border-box;
+
+    /* ↓ wrap text instead of truncating ↓ */
+    white-space:     normal;
+    overflow-wrap:   break-word;
+    word-break:      break-word;
+
+    /* you can keep overflow:hidden on the sides if you like */
+    overflow: hidden;
+}
+
+.event-popup {
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    background: white;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.event-popup button {
+    background: #c00;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
